@@ -1,0 +1,48 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# bivariatechoropleths
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of **bivariatechoropleths** is to give easy and "tidy" tools for bivariate mapping, including static images for publication, dynamic maps for interactive documents, and a range of tools for creating and exploring bivariate colour palettes.
+
+## Installation
+
+You can install the developer version of **bivariatechoropleths** with the following command:
+
+```{r, eval=FALSE}
+devtools::install_github("chris31415926535/bivariatechoropleths")
+```
+
+
+## Example
+
+Working examples will go here soon. Here's a simple call that will make an interactive bivariate choropleth using Leaflet:
+
+```{r example, eval = FALSE}
+library(bivariatechoropleths)
+library(sf)
+
+map_data <- sf::read_sf("ontario_data.shp")
+
+leaflet::leaflet() %>%
+  bivariatechoropleths::addBivariateChoropleth(map_data,
+                                               variable_1,
+                                               variable_2)
+
+```
+

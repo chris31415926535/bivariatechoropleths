@@ -1,0 +1,17 @@
+Package: bivariatechoropleths
+Type: Package
+Title: Interactive Bivariate Mapping Made Easy
+Version: 0.1.0
+Author: Christopher Belanger
+Maintainer: Christopher Belanger <christopher.a.belanger@gmail.com>
+Description: A bivariate choropleth, or bivariate map, shows how two variables 
+   vary across geographical regions. For example, it might show how median 
+   income and life expectancy vary across Canadian provinces. With two variables
+   we need a two-dimensional colour palette, which comes with considerations
+   about accessibility and colour-blindness. This package offers tools for
+   creating static and interactive bivariate maps, and for creating and working
+   with bivariate colour palettes.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
