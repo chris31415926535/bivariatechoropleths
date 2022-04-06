@@ -55,3 +55,23 @@ improving.
 Please submit any bugs or issues on GitHub:
 https://github.com/chris31415926535/bivariatechoropleths
 }
+\examples{
+\dontrun{
+leaflet::leaflet() \%>\%
+  leaflet::addTiles() \%>\%
+  bivariatechoropleths::addBivariateChoropleth(
+    map_data = bivariatechoropleths::renfrew_county,
+    var1_name = pop_2016,
+    var2_name = median_household_income_2015,
+    ntiles= 3,
+    var1_label = "Population, 2016",
+    var2_label = "Median Household\nIncome, 2015",
+    region_name = "CSDNAME",
+    weight = 1,
+    fillOpacity = 0.7,
+    color = "grey",
+    highlightOptions = leaflet::highlightOptions(color = "orange",
+                                                 weight = 2,
+                                                 opacity = 1))
+#'     }
+}
