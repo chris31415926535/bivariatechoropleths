@@ -11,6 +11,9 @@ for bivariate mapping, including static images for publication, dynamic
 maps for interactive documents, and a range of tools for creating and
 exploring bivariate colour palettes.
 
+**Please note** this is in development. Any bug reports or suggestions
+are welcome.
+
 ## Installation
 
 You can install the developer version of **bivariatechoropleths** with
@@ -22,17 +25,28 @@ devtools::install_github("chris31415926535/bivariatechoropleths")
 
 ## Example
 
-Working examples will go here soon. Here’s a simple call that will make
-an interactive bivariate choropleth using Leaflet:
+Here’s an example using a built-in dataset about Renfrew County,
+Ontario. It won’t render here, but if you run it locally it will give
+you an interactive Leaflet map.
 
 ``` r
 library(bivariatechoropleths)
-library(sf)
-
-map_data <- sf::read_sf("ontario_data.shp")
+library(leaflet)
 
 leaflet::leaflet() %>%
-  bivariatechoropleths::addBivariateChoropleth(map_data,
-                                               variable_1,
-                                               variable_2)
+   leaflet::addTiles() %>%
+   bivariatechoropleths::addBivariateChoropleth(
+     map_data = bivariatechoropleths::renfrew_county,
+     var1_name = pop_2016,
+     var2_name = median_household_income_2015,
+     ntiles= 3,
+     var1_label = "Population, 2016",
+     var2_label = "Median Household\nIncome, 2015",
+     region_name = "CSDNAME",
+     weight = 1,
+     fillOpacity = 0.7,
+     color = "grey",
+     highlightOptions = leaflet::highlightOptions(color = "orange",
+                                                  weight = 2,
+                                                  opacity = 1)) 
 ```
