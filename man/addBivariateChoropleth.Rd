@@ -14,6 +14,7 @@ addBivariateChoropleth(
   var2_label = NA,
   label_arrows = TRUE,
   region_names = NA,
+  add_legend = TRUE,
   paletteFunction = pals::stevens.pinkblue,
   ...
 )
@@ -21,11 +22,36 @@ addBivariateChoropleth(
 \arguments{
 \item{map}{A Leaflet map created by `leaflet::leaflet()`.}
 
-\item{...}{}
+\item{map_data}{`sf` object with geometry features and two columns of data to plot with a bivariate choropleth.}
+
+\item{var1_name}{Column name of the first variable.}
+
+\item{var2_name}{Column name of the second variable.}
+
+\item{ntiles}{Number of ntiles. 3 works well.}
+
+\item{var1_label}{Human-readable label for variable 1.}
+
+\item{var2_label}{Human-readable label for variable 2.}
+
+\item{label_arrows}{Boolean, defaults TRUE. Should we show nice arrows on the legend?}
+
+\item{region_names}{Column with region names.}
+
+\item{add_legend}{Boolean, defaults TRUE. Should we add a legend?}
+
+\item{paletteFunction}{Bivariate palette function. Defaults to `pals::stevens.pinkblue`.}
+
+\item{...}{Other arguments passed to Leaflet.}
 }
 \value{
-
+A Leaflet object with a bivariate choropleth.
 }
 \description{
-Add a Bivariate Choropleth to a Leaflet Map
+Please note this function is a work in progress and this documentation needs
+improving.
+}
+\details{
+Please submit any bugs or issues on GitHub:
+https://github.com/chris31415926535/bivariatechoropleths
 }
